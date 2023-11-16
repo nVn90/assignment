@@ -1,0 +1,64 @@
+{
+  "cars": [
+    {
+      "name": "Hyundai i10 Magna 1.1 Petrol",
+      "imgSrc": "https://spn-mda.spinny.com/img/CAv27UN3S36XkGfiIKpbGA/file.JPG",
+      "color": "red",
+      "make": "hyundai",
+      "fuelType": "petrol",
+      "priceRange": "1l-2l",
+      "yearRange": "2013",
+      "loc": "delhi-ncr"
+    },
+    {
+      "name": "Maruti Suzuki Ciaz Alpha",
+      "imgSrc": "https://spn-mda.spinny.com/img/TuWRIdnWQFOy4djrCiilww/file.JPG",
+      "color": "gray",
+      "make": "maruti",
+      "fuelType": "cng",
+      "priceRange": "4l-10l",
+      "yearRange": "2010",
+      "loc": "uttar-pradesh"
+    },
+    {
+      "name": "Maruti Suzuki Swift LXI",
+      "imgSrc": "https://spn-mda.spinny.com/img/REjyO9k5RxOYVsBlKgYX2A/file",
+      "color": "black",
+      "make": "maruti",
+      "fuelType": "petrol",
+      "priceRange": "4l-10l",
+      "yearRange": "2010",
+      "loc": "delhi-ncr"
+    },
+    {
+      "name": "Maruti Suzuki Baleno Delta",
+      "imgSrc": "https://spn-mda.spinny.com/img/L3rjxpglQvu5XiIjGgMKug/file.JPG",
+      "color": "gray",
+      "make": "maruti",
+      "fuelType": "cng",
+      "priceRange": "1l-2l",
+      "yearRange": "2010",
+      "loc": "delhi-ncr"
+    },
+    {
+      "name": "Maruti Suzuki Jimny Alpha 1.5l Petrol AT",
+      "imgSrc": "https://spn-mda.spinny.com/img/F3iaNI3lSbOoSFeUU2zJ9w/file.JPG",
+      "color": "blue",
+      "make": "maruti",
+      "fuelType": "cng",
+      "priceRange": "1l-2l",
+      "yearRange": "2011",
+      "loc": "delhi-ncr"
+    },
+    {
+      "name": "Hyundai Elite i20 Sportz ",
+      "imgSrc": "https://spn-mda.spinny.com/img/Z%2B6i7qLpTnWAf3jcEd16lA/file.JPG",
+      "color": "blue",
+      "make": "hyundai",
+      "fuelType": "cng",
+      "priceRange": "1l-2l",
+      "yearRange": "2011",
+      "loc": "uttar-pradesh"
+    }
+  ]
+}
