@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ values, setValues }) => {
   const navigate = useNavigate();
-
-  const [carParams, setCarParams] = useState(
-    JSON.parse(localStorage.getItem("used")) || {}
-  );
+  console.log(values);
+  const [carParams, setCarParams] = useState({});
   const [path, setPath] = useState("");
   let comb = "";
 
@@ -17,22 +15,21 @@ const Sidebar = () => {
 
   // on refresh the page
   useEffect(() => {
-    const localStorageData = JSON.parse(localStorage.getItem("used"));
-    setCarParams(localStorageData);
+    if (values) setCarParams(values);
   }, []);
 
   useEffect(() => {
-    const values = Object.values(carParams);
-    values.forEach((ele) => {
+    const val = Object.values(carParams);
+    val.forEach((ele) => {
       comb = comb + "-" + ele;
     });
+
     setPath(`/used${comb}`);
+    setValues(carParams);
     navigate(`/used${comb}`, { state: carParams });
-    localStorage.setItem("used", JSON.stringify(carParams));
   }, [carParams]);
 
   const clearFilter = () => {
-    localStorage.removeItem("used");
     setCarParams({});
   };
 
@@ -52,7 +49,7 @@ const Sidebar = () => {
                 type="radio"
                 name="make"
                 value={"maruti"}
-                checked={carParams?.make == "maruti"}
+                checked={values?.make == "maruti"}
                 onChange={handleChange}
               />
               Maruti
@@ -62,7 +59,7 @@ const Sidebar = () => {
                 type="radio"
                 name="make"
                 value={"hyundai"}
-                checked={carParams?.make == "hyundai"}
+                checked={values?.make == "hyundai"}
                 onChange={handleChange}
               />
               Hyundai
@@ -79,7 +76,7 @@ const Sidebar = () => {
                 name="color"
                 value={"black"}
                 onChange={handleChange}
-                checked={carParams?.color == "black"}
+                checked={values?.color == "black"}
               />
               Black
             </label>
@@ -89,7 +86,7 @@ const Sidebar = () => {
                 name="color"
                 value={"red"}
                 onChange={handleChange}
-                checked={carParams?.color == "red"}
+                checked={values?.color == "red"}
               />
               Red
             </label>
@@ -99,7 +96,7 @@ const Sidebar = () => {
                 name="color"
                 value={"gray"}
                 onChange={handleChange}
-                checked={carParams?.color == "gray"}
+                checked={values?.color == "gray"}
               />
               Gray
             </label>
@@ -109,7 +106,7 @@ const Sidebar = () => {
                 name="color"
                 value={"blue"}
                 onChange={handleChange}
-                checked={carParams?.color == "blue"}
+                checked={values?.color == "blue"}
               />
               Blue
             </label>
@@ -125,7 +122,7 @@ const Sidebar = () => {
                 name="fuelType"
                 value={"petrol"}
                 onChange={handleChange}
-                checked={carParams?.fuelType == "petrol"}
+                checked={values?.fuelType == "petrol"}
               />
               Petrol
             </label>
@@ -135,7 +132,7 @@ const Sidebar = () => {
                 name="fuelType"
                 value={"cng"}
                 onChange={handleChange}
-                checked={carParams?.fuelType == "cng"}
+                checked={values?.fuelType == "cng"}
               />
               CNG
             </label>
@@ -151,7 +148,7 @@ const Sidebar = () => {
                 name="priceRange"
                 value={"1l-2l"}
                 onChange={handleChange}
-                checked={carParams?.priceRange == "1l-2l"}
+                checked={values?.priceRange == "1l-2l"}
               />
               1L-4L
             </label>
@@ -161,7 +158,7 @@ const Sidebar = () => {
                 name="priceRange"
                 value={"4l-10l"}
                 onChange={handleChange}
-                checked={carParams?.priceRange == "4l-10l"}
+                checked={values?.priceRange == "4l-10l"}
               />
               4L-10L
             </label>
@@ -177,7 +174,7 @@ const Sidebar = () => {
                 name="yearRange"
                 value={"2010"}
                 onChange={handleChange}
-                checked={carParams?.yearRange == "2010"}
+                checked={values?.yearRange == "2010"}
               />
               2010
             </label>
@@ -187,7 +184,7 @@ const Sidebar = () => {
                 name="yearRange"
                 value={"2011"}
                 onChange={handleChange}
-                checked={carParams?.yearRange == "2011"}
+                checked={values?.yearRange == "2011"}
               />
               2011
             </label>
@@ -197,7 +194,7 @@ const Sidebar = () => {
                 name="yearRange"
                 value={"2012"}
                 onChange={handleChange}
-                checked={carParams?.yearRange == "2012"}
+                checked={values?.yearRange == "2012"}
               />
               2012
             </label>
@@ -213,7 +210,7 @@ const Sidebar = () => {
                 name="loc"
                 value={"delhi-ncr"}
                 onChange={handleChange}
-                checked={carParams?.loc == "delhi-ncr"}
+                checked={values?.loc == "delhi-ncr"}
               />
               Delhi-NCR
             </label>
@@ -223,7 +220,7 @@ const Sidebar = () => {
                 name="loc"
                 value={"uttar-pradesh"}
                 onChange={handleChange}
-                checked={carParams?.loc == "uttar-pradesh"}
+                checked={values?.loc == "uttar-pradesh"}
               />
               Uttar Pradesh
             </label>
